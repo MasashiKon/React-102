@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 //import images
+import leftImg from '../assets/look-left.jpeg'; 
+import rightImg from '../assets/look-right.jpeg'; 
 
 class ChallengeOne extends Component {
   //declare the state here
   state = {
+    images: {
+      left: leftImg,
+      right: rightImg
+    },
+    eyeDirection: "left"
   };
 
   //click left/right button handler goes here
+  handleClick = (e, direction) => {
+    e.stopPropagation();
+    this.setState(() => ({eyeDirection: direction}))
+  }
 
   render() {
     return (
@@ -15,12 +26,12 @@ class ChallengeOne extends Component {
         <div className="msg">
           <img
             className="ch1"
-            src=""
-            alt=""
+            src={this.state.images[this.state.eyeDirection]}
+            alt="image"
           />
         </div>
-        <button className="btn">⭠</button>
-        <button className="btn">⭢</button>
+        <button className="btn" onClick={(e) => this.handleClick(e, "left")}>⭠</button>
+        <button className="btn" onClick={(e) => this.handleClick(e, "right")}>⭢</button>
       </>
     );
   }

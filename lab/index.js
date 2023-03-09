@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './styles.css'
+import ChallengeOne from './components/ChallengeOne';
+import ChallengeTwo from './components/ChallengeTwo';
 
 class App extends React.Component{
 
@@ -9,6 +11,8 @@ class App extends React.Component{
           <div className="App">
             <h1>React Lab 102</h1>
             {/* Import Components (ChallengeOne and Challenge Two) here */}
+            <ChallengeOne />
+            <ChallengeTwo />
           </div>
         );
       }

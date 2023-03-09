@@ -25796,22 +25796,35 @@ var App = /*#__PURE__*/function (_React$Component) {
     _this = _super.call.apply(_super, [this].concat(args));
     _defineProperty(_assertThisInitialized(_this), "state", {});
     _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
-      console.log(e.target.value);
+      // console.log(e.target.value)
       _this.setState(function () {
         return {
           anything: e.target.value
         };
       });
     });
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
+      e.preventDefault();
+      console.log(_this.state.anything);
+    });
     return _this;
   }
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        onChange: this.handleChange
-      }), /*#__PURE__*/_react.default.createElement("p", null, this.state.anything));
+      return (
+        /*#__PURE__*/
+        // <>
+        //     <input type="text" onChange={this.handleChange} />
+        //     <p>{this.state.anything}</p>
+        // </>
+        _react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
+          onSubmit: this.handleSubmit
+        }, /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          onChange: this.handleChange
+        }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", null, "Submit")))
+      );
     }
   }]);
   return App;
@@ -25843,7 +25856,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58611" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52420" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

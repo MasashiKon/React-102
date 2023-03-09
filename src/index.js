@@ -1,20 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-class App extends React.Component{
+class App extends React.Component {
 
-    state = { }
+    state = {}
 
     handleChange = (e) => {
-        console.log(e.target.value)
-        this.setState(() =>({anything: e.target.value}))
+        // console.log(e.target.value)
+        this.setState(() => ({ anything: e.target.value }))
     }
 
-    render(){
-        return(
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state.anything)
+    }
+
+    render() {
+        return (
+            // <>
+            //     <input type="text" onChange={this.handleChange} />
+            //     <p>{this.state.anything}</p>
+            // </>
             <>
-                <input type="text" onChange={this.handleChange} />
-                <p>{this.state.anything}</p>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" onChange={this.handleChange} />
+                    <br />
+                    <button>Submit</button>
+                </form>
             </>
         )
     }

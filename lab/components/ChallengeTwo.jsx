@@ -17,7 +17,7 @@ export default class ChallengeTwo extends Component {
   }
 
   //componentDidMount will execute when the page has loaded (this will only run once)
-  componentDidMount() { 
+  componentDidMount() {
     //display the student list after 3 seconds
   }
 
